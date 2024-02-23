@@ -15,28 +15,31 @@ public class Problem6 {
         String strWithMaxVowels = "";
         
         for(int i = 0; i < arr.length; i++){
+            // get the first string from the array
             String str = arr[i];
             int vowelsCount = 0;
 
             for(int j = 0; j < str.length(); j++){
+                // check if the character in the string is equal to a,e,i,o or u
                 if(str.charAt(j) == 'a' || str.charAt(j) == 'e' || str.charAt(j) == 'i' || str.charAt(j) == 'o' || str.charAt(j) == 'u'){
                     vowelsCount++;
                 }
             }
 
+            // compare max with vowel count
             if(max < vowelsCount){
                 max = vowelsCount;
-                strWithMaxVowels = arr[i];
+                strWithMaxVowels = arr[i]; // store the string with maximum voewl count
             }
 
-            vowelsCount = 0;
+            vowelsCount = 0; // reset vowel count to 0 for another string
         }
 
         return strWithMaxVowels;
     }
     public static void main(String args[]){
 
-        String arr[] = {"Sunshine", "Umbrella", "Major", "Resourceful", "Alphanumeric"};
+        String arr[] = {"Sunshine", "Umbrella", "Major", "Resourceful", "Alphanumeric"}; // sample array
 
         System.out.println("String with maximum vowels is: " + getStringWithMostVowels(arr));
     }

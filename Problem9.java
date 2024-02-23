@@ -10,16 +10,22 @@ public class Problem9 {
     public static boolean isSpecialInteger(int number){
         int sum = 0;
         int product = 1;
+        // store the original number to compare later
         int originalNumber = number;
 
         while (number > 0) {
+            // get the last digit of the number
             int lastDigit = number % 10;
+            // add last digit to the sum of digits
             sum = sum + lastDigit;
+            // multiply last digit to the product of digits
             product = product * lastDigit;
+            // remove last digit from the number
             number = number / 10;
 
         }
 
+        // check if the original number is equal to the number obtained by addition of sum of indivial digits to the product of the digits
         if(sum + product == originalNumber){
             return true;
         }
@@ -29,7 +35,9 @@ public class Problem9 {
     }
     public static void main(String args[]){
  
-        System.out.println("Is it special integre? " + isSpecialInteger(59));
+        int number = 59;
+        boolean result = isSpecialInteger(number);
+        System.out.println("Is it special integre? " + result);
     }
     
 }

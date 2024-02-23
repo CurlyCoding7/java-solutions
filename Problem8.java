@@ -6,11 +6,17 @@
 public class Problem8 {
 
     public static String secondsToTime(int seconds){
+        // calculate days
         int days = seconds / (24 * 3600);
+        // get the remaing seconds
         seconds %= (24 * 3600);
+        // calculate hours from seconds
         int hours = seconds / 3600;
+        // calculate remaing seconds
         seconds %= 3600;
+        // calculate minutes from the remaing seconds
         int mins = seconds / 60;
+        // calculate remaing seconds after derivng days, hours and minutes
         int sec = seconds % 60;
 
         return days + " Day(s) " + hours +  " Hour(s) " + mins + " Minute(s) " + sec + " Second(s)";
@@ -18,7 +24,9 @@ public class Problem8 {
 
     public static void main(String args[]){
 
-        System.out.println(secondsToTime(21893872));
+        int seconds = 21893872;
+        String time = secondsToTime(seconds);
+        System.out.println(time);
     }
     
 }
